@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    
+    <!--Css-->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <!--Js-->
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script>
+    function hide() {
+        window.location.href = "tp-toolbar://hide";
+    }
+    function load() {
+        var vid = document.getElementById("video");
+        vid.onloadstart = function() {
+            vid.play();
+        };
+    }
+    </script>
+    <script src="js/voice.js"></script>
+    
+    <title>Unisys Splash</title>
+</head>
+
+<body onload="hide();load();">
+    
+    <div id="wrap">
+        <a class="splashLink" href="tp-collection://browse-home?mode=browse">
+            <video id="splash" preload="auto" autoplay playsinline muted align="middle">
+                <source src="media/splash.mp4" type="video/mp4">
+            </video>
+        </a>
+    </div>
+    <audio id="audio" src="media/splash.mp3"></audio>
+    
+    <script>
+        var vid = document.getElementById("splash");
+        window.onload = function() {
+            vid.play();
+        }
+		var audio = document.getElementById("audio")
+		audio.play();
+    </script>
+    
+</body>
+
+</html>
