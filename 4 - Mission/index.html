@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    
+    <!--Css-->
+    <link href="css/format.css" rel="stylesheet" type="text/css">
+    <link href="css/open-sans.css" rel="stylesheet" type="text/css">
+    <link href="css/navigation.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        div#images, .ov_wrap {height:6000px}
+        .menu a:nth-child(2)>p {background-color: #BA2C31;}
+    </style>
+    
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    
+    <script>
+        function hide() {
+            window.location.href = "tp-toolbar://hide";
+        }
+    </script> 
+    
+    <title>Unisys Mission</title>
+    
+</head>
+    
+<body onload="hide()">
+    
+    <div class="ov_back col-lg-12 center"></div>
+    <div id="overlay" class="col-lg-10 center">
+        <div class="ov_mn col-lg-12 center">
+            <img src="media/mission.gif" width="100%"/>
+        </div>
+        <div class="ov_close col-lg-4 center">
+            <img src="media/close.png" width="40px"/>
+        </div>
+    </div>
+    
+    <div id="page">
+        <div class="ov_wrap">
+            <div id="over_1" class="block"></div>
+            <div class="col-lg-12 lay">
+                <img id="lay_1" class="image" src="media/screen_mGage.png" />
+            </div>
+            <div id="over_2" class="block"></div>
+            <div class="col-lg-12 lay">
+                <img id="lay_1" class="image" src="media/screen_travelSky.png" />
+            </div>
+            <div id="over_3" class="block"></div>
+            <div class="col-lg-12 lay">
+                <img id="lay_1" class="image" src="media/screen_dell.png" />
+            </div>
+        </div>
+        <div id="images">
+            <img class="sequencer" src="./images/0.jpg" />
+        </div>
+        <audio preload="yes"><source src="media/audio.mp3" type="audio/mpeg"></audio>
+    </div>
+    
+    <nav id="navigation">
+        <div class="col-3-mb nav rel">
+            <a href="tp-collection://vision-collection"><p>Previous</p></a>
+        </div>
+        <div id="sub" class="col-3-mb home rel">
+            <p>Menu</p>
+        </div>
+        <div class="col-3-mb nav rel">
+            <a href="tp-collection://core-beliefs-collection"><p>Next</p></a>
+        </div>
+    </nav>
+    
+    <nav id="sub_navigation" class="menu col-lg-12 center">
+        <a href="tp-collection://vision-collection"><p>Vision</p></a>
+        <a href="tp-collection://mission-collection"><p>Mission</p></a>
+        <a href="tp-collection://core-beliefs-collection"><p>Core Beliefs</p></a>
+        <a href="tp-collection://value-collection"><p>Value Propositions</p></a>
+        <a href="tp-collection://position-collection"><p>Positioning</p></a>
+        <a href="tp-collection://browse-home?mode=browse"><p>Resources</p></a>
+    </nav>
+    
+    <script src="js/jquery-sequencer.js"></script>
+    <script>
+        var imgSequence = $("#images").sequencer({
+            count: 460,
+            path: "./images",
+            ext: "jpg"
+        },imagesDoneLoading);
+        var optioncount = 0;
+        function imagesDoneLoading(opcount){
+            optioncount = opcount;
+        }
+        $('body').css({'overflow':'hidden','margin-top':'-44px !important'});
+    </script>
+    <script src="js/voice.js" type="text/javascript"></script>
+
+</body>
+
+</html>
